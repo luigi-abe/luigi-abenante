@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+:root {
+  --underline-color: #687c4f;
+}
+
+body {
+  background-color: #eae2b7;
+}
