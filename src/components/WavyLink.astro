@@ -6,13 +6,20 @@ interface Props {
   color?: string;
 }
 
-const { href, text, isActive = false, color = '#687c4f' } = Astro.props as Props;
+const {
+  href,
+  text,
+  isActive = false,
+  color = "#687c4f",
+} = Astro.props as Props;
 ---
 
-<a class={`wavy-link ${isActive ? 'active' : ''}`} 
-  href={href} 
-  data-text={text}
-  style={`--underline-color: ${color};`}>
+<a
+  class={`wavy-link ${isActive ? "active" : ""}`}
+  href={href}
+  data-text="text-text-text-text"
+  style={`--green-color: ${color};`}
+>
   {text}
 </a>
 
@@ -27,20 +34,23 @@ const { href, text, isActive = false, color = '#687c4f' } = Astro.props as Props
 
   .wavy-link::after {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     white-space: nowrap;
     content: attr(data-text) attr(data-text);
     color: transparent;
     line-height: 1.8;
     text-decoration: underline;
     text-decoration-style: wavy;
-    text-decoration-color: var(--underline-color);
+    text-decoration-color: var(--green-color);
     display: none;
     transition: opacity 0.3s ease;
   }
 
   .wavy-link.active::after {
-    display: block
+    display: block;
   }
 
   .wavy-link.active:hover::after {
@@ -52,4 +62,4 @@ const { href, text, isActive = false, color = '#687c4f' } = Astro.props as Props
       margin-left: -51%;
     }
   }
-</style> 
+</style>

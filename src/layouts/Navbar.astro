@@ -1,13 +1,12 @@
 ---
-import WavyLink from '../components/WavyLink.astro';
+import WavyLink from "../components/WavyLink.astro";
 
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="container mx-auto max-w-lg p-4">
+<nav>
   <div class="flex items-center gap-2 text-lg">
     <WavyLink href="/" text="home" isActive={currentPath === "/"} />
     <WavyLink href="/blog" text="blog" isActive={currentPath === "/blog"} />
-  </div> 
+  </div>
 </nav>
- 
