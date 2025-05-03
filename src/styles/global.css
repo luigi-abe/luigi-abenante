@@ -1,9 +1,15 @@
 @import 'tailwindcss';
 
 :root {
-  --underline-color: #687c4f;
+  --green-color: #606c38;
+  --dirty-white-color: #ead2b7;
+  --white-color: #f6f6f6;
+  --light-black-color: #2b2c28;
+  --black-color: #1d1d1b;
+  --yellow-color: #fcbf49;
 }
 
 body {
-  background-color: #eae2b7;
+  background-color: var(--black-color);
+  color: var(--white-color);
 }

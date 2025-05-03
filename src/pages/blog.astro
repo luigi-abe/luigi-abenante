@@ -1,0 +1,28 @@
+---
+import NewsletterBlogSection from "../components/blog-section/NewsletterBlogSection.astro";
+import YoutubeBlogSection from "../components/blog-section/YoutubeBlogSection.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section>
+    <div class="mb-10">
+      <h1
+        class="text-3xl mb-4 font-bold transform hover:text-(--dirty-white-color) transition-colors"
+      >
+        My corner of
+        <span
+          style={{ textDecorationSkipInk: "none" }}
+          class="underline decoration-wavy underline-offset-4 decoration-(--yellow-color) mr-1"
+        >
+          thoughts
+        </span>
+        📝
+      </h1>
+    </div>
+
+    <YoutubeBlogSection />
+
+    <NewsletterBlogSection />
+  </section>
+</Layout>
