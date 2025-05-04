@@ -10,14 +10,14 @@
       >
         <div>
           <svg
-            class="w-32 fill-transparent stroke-current stroke-[0.1875rem] text-red-400
-         animate-[draw_2s_ease-in-out_0.5s_forwards]"
+            class="w-32 fill-transparent text-(--green-color)"
             viewBox="0 0 176 55"
           >
             <path
               fill="none"
+              id="scribble"
               stroke="currentColor"
-              stroke-width="2"
+              stroke-width="3"
               d="M28.0001 9.50003C34 6.00006 75.5 1.18613e-05 107 1.99997C138.5 3.99993 167 7.00013 172.5 23.5001C178 40 127 49 83.0001 52C39.0002 55.0001 -2.49983 51.0001 4.50007 31.5001C11.5 12 93.5 1.60145 123 7.00001"
             ></path>
           </svg>
@@ -34,15 +34,35 @@
   </div>
 
   <div class="flex gap-4">
-    <div class="w-fit bg-white h-fit rounded-xl shadow-xl/30">
+    <div
+      class="w-fit h-fit rounded-xl border-1 hover:border-(--yellow-color)
+      transition-all duration-300 hover:transform hover:-translate-y-1"
+    >
       <iframe
-        class="p-1 rounded-2xl"
+        class="rounded-2xl"
         src="https://www.youtube.com/embed/ehQNWcCKyW0"></iframe>
     </div>
-    <div class="w-fit bg-white h-fit rounded-xl shadow-xl/30">
+    <div
+      class="w-fit h-fit rounded-xl border-1 hover:border-(--yellow-color)
+      transition-all duration-300 hover:transform hover:-translate-y-1"
+    >
       <iframe
-        class="p-1 rounded-2xl"
+        class="rounded-2xl"
         src="https://www.youtube.com/embed/OasBN4SMKWA"></iframe>
     </div>
   </div>
 </div>
+
+<style>
+  #scribble {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: draw 0.5s ease-in-out forwards;
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>
