@@ -1,0 +1,27 @@
+---
+import { Beer, BriefcaseBusiness, MapPin } from "@lucide/astro";
+
+const softlabLinkedin = "https://www.linkedin.com/company/softlab-spa/?originalSubdomain=it";
+---
+
+<section>
+  <div class="flex items-center mb-2 gap-2">
+    <MapPin size={20} />
+    <p>benevento</p>
+  </div>
+  <div class="flex items-center mb-2 gap-2">
+    <Beer size={20} />
+    <p>software dev</p>
+  </div>
+  <div class="flex items-center mb-2 gap-2">
+    <BriefcaseBusiness size={20} />
+    <p>
+      currently working at @<a
+        class="underline decoration-wavy"
+        href={softlabLinkedin}
+        target="_blank"
+        >softlab
+      </a>
+    </p>
+  </div>
+</section>
