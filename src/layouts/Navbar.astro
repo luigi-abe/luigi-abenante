@@ -5,8 +5,8 @@ const currentPath = Astro.url.pathname;
 ---
 
 <nav>
-  <div class="flex items-center gap-2 text-lg">
-    <WavyLink href="/" text="home" isActive={currentPath === "/"} />
-    <WavyLink href="/blog" text="blog" isActive={currentPath === "/blog"} />
-  </div>
+    <div class="flex items-center gap-2 text-lg">
+        <WavyLink href="/" text="home" isActive={currentPath === "/"} color="#fcbf49" />
+        <WavyLink href="/blog" text="blog" isActive={currentPath === "/blog"} />
+    </div>
 </nav>

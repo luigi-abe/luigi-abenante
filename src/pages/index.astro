@@ -1,38 +1,52 @@
 ---
+import ContactLink from "../components/home-section/ContactLink.astro";
 import ShortInfo from "../components/home-section/ShortInfo.astro";
+import WorkExperience from "../components/home-section/WorkExperiences.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <section>
-    <div class="mb-10">
-      <h1
-        class="text-3xl mb-4 font-bold transform hover:text-(--dirty-white-color) transition-colors"
-      >
-        hi, I'm <span class="relative">
-          luigi abenante 👋
-
-          <span class="absolute left-0 top-9 w-full h-4 overflow-visible">
-            <svg
-              class="w-full h-full text-(--yellow-color)"
-              viewBox="-320 -70 640 60"
-              preserveAspectRatio="none"
+    <section>
+        <div class="mb-10">
+            <h1
+                class="text-3xl mb-4 font-bold transform hover:text-(--dirty-white-color) transition-colors"
             >
-              <path
-                id="scribble"
-                d="M-300,-56 C-50,-72 298,-65 300,-59 C332,-53 -239,-36 -255,-27 C-271,-18 -88,-24 91,-20"
-                stroke="currentColor"
-                stroke-width="10"
-                fill="none"
-                pathLength="1"></path>
-            </svg>
-          </span>
-        </span>
-      </h1>
-    </div>
+                hi, I'm <span class="relative">
+                    luigi abenante 👋
 
-    <div>
-      <ShortInfo />
-    </div>
-  </section></Layout
+                    <span class="absolute left-0 top-9 w-full h-4 overflow-visible">
+                        <svg
+                            class="w-full h-full text-(--yellow-color)"
+                            viewBox="-320 -70 640 60"
+                            preserveAspectRatio="none"
+                        >
+                            <path
+                                id="scribble"
+                                d="M-300,-56 C-50,-72 298,-65 300,-59 C332,-53 -239,-36 -255,-27 C-271,-18 -88,-24 91,-20"
+                                stroke="currentColor"
+                                stroke-width="10"
+                                fill="none"
+                                pathLength="1"></path>
+                        </svg>
+                    </span>
+                </span>
+            </h1>
+        </div>
+
+        <div>
+            <h2 class="text-2xl mb-2">
+                <span class="text-(--yellow-color)">#</span> a bit about me
+            </h2>
+            <div class="px-2">
+                <ShortInfo />
+                <ContactLink />
+            </div>
+            <h2 class="text-2xl mb-2 mt-10">
+                <span class="text-(--yellow-color)">#</span> work experiences
+            </h2>
+            <div class="px-2">
+                <WorkExperience />
+            </div>
+        </div>
+    </section></Layout
 >

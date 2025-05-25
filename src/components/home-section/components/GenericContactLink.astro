@@ -1,0 +1,16 @@
+---
+import { Link } from "@lucide/astro";
+interface Props {
+    contactName: string;
+    redirectUrl: string;
+}
+
+const { contactName, redirectUrl } = Astro.props;
+---
+
+<div class="hover:scale-105 transition-all duration-300 contact-link">
+    <a href={redirectUrl} target="_blank" class="flex items-center gap-1">
+        <Link size={20} class="text-(--yellow-color)" />
+        <span>{contactName}</span></a
+    >
+</div>
