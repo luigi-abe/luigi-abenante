@@ -3,10 +3,10 @@ interface Props {
     href: string;
     text: string;
     isActive?: boolean;
-    color?: string;
+    color: string;
 }
 
-const { href, text, isActive = false, color = "#687c4f" } = Astro.props as Props;
+const { href, text, isActive = false, color } = Astro.props as Props;
 ---
 
 <a
