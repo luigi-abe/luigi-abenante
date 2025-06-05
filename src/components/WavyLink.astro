@@ -3,16 +3,14 @@ interface Props {
     href: string;
     text: string;
     isActive?: boolean;
-    color: string;
 }
 
-const { href, text, isActive = false, color } = Astro.props as Props;
+const { href, text, isActive = false } = Astro.props as Props;
 ---
 
 <a
     class={`wavy-link ${isActive ? "active" : ""}`}
     href={href}
-    style={`--wavy-color: ${color};`}
     data-text="text-text-text-text"
 >
     {text}
@@ -39,7 +37,7 @@ const { href, text, isActive = false, color } = Astro.props as Props;
         line-height: 1.8;
         text-decoration: underline;
         text-decoration-style: wavy;
-        text-decoration-color: var(--wavy-color);
+        text-decoration-color: var(--yellow-color);
         display: none;
         transition: opacity 0.3s ease;
     }
