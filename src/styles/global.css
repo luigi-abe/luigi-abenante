@@ -1,15 +1,14 @@
 @import 'tailwindcss';
 
 :root {
-  --green-color: #606c38;
-  --dirty-white-color: #ead2b7;
-  --white-color: #f6f6f6;
-  --light-black-color: #2b2c28;
-  --black-color: #1d1d1b;
-  --yellow-color: #fcbf49;
+    --dirty-white-color: #ead2b7;
+    --white-color: #f6f6f6;
+    --light-black-color: #2b2c28;
+    --black-color: #1d1d1b;
+    --yellow-color: #fcbf49;
 }
 
 body {
-  background-color: var(--black-color);
-  color: var(--white-color);
+    background-color: var(--black-color);
+    color: var(--white-color);
 }
