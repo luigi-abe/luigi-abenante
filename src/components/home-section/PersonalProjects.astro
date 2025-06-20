@@ -1,0 +1,89 @@
+---
+import GenericProject from "./components/GenericProject.astro";
+const baseGithubUrl = "https://github.com/Lewis-00/";
+---
+
+<section>
+    <div class="px-2">
+        <GenericProject
+            projectName="portfolio"
+            description="current website"
+            projectUrl={`${baseGithubUrl}portfolio`}
+            technologies={["astro", "tailwind", "git"]}
+        />
+        <GenericProject
+            projectName="vvvvDOM"
+            description="a virtual DOM from scratch, inspired by react's architecture"
+            projectUrl={`${baseGithubUrl}vvvvDOM`}
+            technologies={["javascript"]}
+        />
+        <div id="hidden-projects" class="hidden">
+            <GenericProject
+                projectName="fast type bot"
+                description="a typing bot that automates text input for monkeytype using python, selenium, and pyautogui"
+                projectUrl={`${baseGithubUrl}fast-type-bot`}
+                technologies={["python", "selenium", "pyautogui"]}
+            />
+            <GenericProject
+                projectName="neovim config"
+                description="personalized neovim configuration to enhance development workflow"
+                projectUrl={`${baseGithubUrl}dotfiles/tree/main/nvim/.config/nvim`}
+                technologies={["lua", "neovim", "git"]}
+            />
+        </div>
+
+        <div class="mt-3 mx-auto w-fit">
+            <button
+                class="border-2 border-(--yellow-color) text-white px-4 py-2 rounded-lg cursor-pointer transition-all duration-100"
+                id="show-more_btn"
+                aria-expanded="false"
+                aria-controls="hidden-projects"
+            >
+                show more
+            </button>
+        </div>
+    </div>
+</section>
+
+<script is:inline>
+    let isShowMore = false;
+    const btnShowMore = document.getElementById("show-more_btn");
+    const hiddenProjects = document.getElementById("hidden-projects");
+
+    function toggleShowMore() {
+        isShowMore = !isShowMore;
+
+        if (hiddenProjects) {
+            isShowMore
+                ? hiddenProjects.classList.remove("hidden")
+                : hiddenProjects.classList.add("hidden");
+
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth",
+            });
+            btnShowMore.textContent = isShowMore ? "show less" : "show more";
+        }
+    }
+
+    if (btnShowMore) {
+        btnShowMore.addEventListener("click", toggleShowMore);
+
+        // Button follow mouse effect
+        btnShowMore.addEventListener("mousemove", (e) => {
+            const rect = btnShowMore.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width - 0.5) * 16; // max 8px
+            const y = ((e.clientY - rect.top) / rect.height - 0.5) * 16;
+            btnShowMore.style.transform = `translate(${x}px, ${y}px)`;
+        });
+        btnShowMore.addEventListener("mouseleave", () => {
+            btnShowMore.style.transform = "translate(0,0)";
+        });
+    }
+</script>
+
+<style>
+    #hidden-projects {
+        transition-property: opacity, max-height;
+    }
+</style>

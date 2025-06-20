@@ -1,0 +1,39 @@
+---
+import { Link as LinkIcon } from "@lucide/astro";
+
+interface Props {
+    projectName: string;
+    projectUrl?: string;
+    description: string;
+    technologies?: string[];
+}
+
+const { projectName, projectUrl, description, technologies = [] } = Astro.props;
+---
+
+<div class="mt-3 p-3 border border-(--yellow-color)/40 rounded-lg bg-black/40">
+    <h4 class="text-xl font-semibold flex items-center gap-2">
+        {projectName}
+        {
+            projectUrl && (
+                <span class="relative group ml-1">
+                    <a href={projectUrl} target="_blank" rel="noopener noreferrer">
+                        <LinkIcon size={16} class="text-(--yellow-color)" />
+                    </a>
+                </span>
+            )
+        }
+    </h4>
+    <p class="text-gray-400 mt-1">{description}</p>
+    {
+        technologies.length > 0 && (
+            <div class="flex flex-wrap gap-2 mt-2">
+                {technologies.map((tech) => (
+                    <span class="border border-(--yellow-color) text-white px-3 py-1 rounded-lg text-sm">
+                        {tech}
+                    </span>
+                ))}
+            </div>
+        )
+    }
+</div>
