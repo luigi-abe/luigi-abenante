@@ -1,0 +1,34 @@
+---
+interface Props {
+    title: string;
+    companyName: string;
+    startDate: string;
+    endDate?: string;
+    bulletPoints: string[];
+}
+const { title, companyName, startDate, endDate = "current", bulletPoints } = Astro.props;
+
+const getTimeExperience = () => {
+    const initialTime = new Date(startDate);
+    const endTime = endDate === "current" ? new Date() : new Date(endDate);
+    if (isNaN(initialTime.getTime()) || isNaN(endTime.getTime())) {
+        return null;
+    }
+
+    const diffYears = endTime.getFullYear() - initialTime.getFullYear();
+    const diffMonths = endTime.getMonth() - initialTime.getMonth();
+
+    return `${diffYears} years ${diffMonths + 1} months`;
+};
+---
+
+<div class="mt-5">
+    <h4 class="text-xl font-semibold">{title}</h4>
+    <p class="text-gray-400 mt-1">
+        <span class="text-(--yellow-color)">{companyName}</span> · {startDate} → {endDate}
+        {getTimeExperience() && `(${getTimeExperience()})`}
+    </p>
+    <ul class="list-disc marker:text-(--yellow-color) pl-5 mt-2">
+        {bulletPoints.map((point) => <li>{point}</li>)}
+    </ul>
+</div>
