@@ -1,5 +1,6 @@
 ---
 import Navbar from "./Navbar.astro";
+import Footer from "./Footer.astro";
 import "../styles/global.css";
 ---
 
@@ -13,9 +14,12 @@ import "../styles/global.css";
         <title>Luigi Abenante</title>
     </head>
     <body>
-        <div class="max-w-screen-md mx-auto p-4">
+        <div class="min-h-screen flex flex-col max-w-screen-md mx-auto p-4 gap-4">
+            <main class="flex-1">
             <Navbar />
-            <slot />
+                <slot />
+            </main>
+            <Footer />
         </div>
     </body>
 </html>
