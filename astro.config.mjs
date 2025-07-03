@@ -10,4 +10,5 @@ export default defineConfig({
     },
     integrations: [react()],
     base: "/luigi-abenante",
+    site: "https://lui-abe.github.io",
 });

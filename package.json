@@ -1,7 +1,6 @@
 {
     "name": "luigi portfolio",
     "type": "module",
-    "hompage": "https://luigi-abe.github.io/luigi-abenante/",
     "version": "0.0.1",
     "scripts": {
         "dev": "astro dev",
