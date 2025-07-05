@@ -7,6 +7,7 @@
         "build": "astro build",
         "preview": "astro preview",
         "astro": "astro",
+        "predeploy": "pnpm run build && touch dist/.nojekyll ",
         "deploy": "gh-pages -d dist"
     },
     "dependencies": {
@@ -25,5 +26,6 @@
         "prettier": "^3.5.3",
         "prettier-plugin-astro": "^0.14.1",
         "tailwindcss": "^4.1.4"
-    }
+    },
+    "packageManager": "pnpm@10.7.0"
 }
