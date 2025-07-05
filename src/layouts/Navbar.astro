@@ -1,12 +1,20 @@
 ---
-import WavyLink from "../components/WavyLink.astro";
+import WavyNavLink from "../components/WavyNavLink.astro";
+import { urlBuilder } from "../utils/utils";
 
-const currentPath = Astro.url.pathname;
+const currentPath = Astro.url.pathname
+const homePath = urlBuilder("/");
+const blogPath = urlBuilder("/blog");
+
+
+const isActive = (path: string) => {
+    return path.replace(/\/$/, "") === currentPath.replace(/\/$/, "")
+}
 ---
 
 <nav>
     <div class="flex items-center gap-2 text-lg">
-        <WavyLink href="/" text="home" isActive={currentPath === "/"} />
-        <WavyLink href="/blog" text="blog" isActive={currentPath === "/blog"} />
+        <WavyNavLink href={homePath} text="home" isActive={isActive(homePath)} />
+        <WavyNavLink href={blogPath} text="blog" isActive={isActive(blogPath)} />
     </div>
 </nav>
