@@ -6,14 +6,13 @@ interface Props {
 }
 
 const { href, text, isActive = false } = Astro.props as Props;
-const isInternal = href.startsWith('/');
 ---
 
 <a
     class={`wavy-link ${isActive ? "active" : ""}`}
     href={href}
     data-text="text-text-text-text"
-    {...(isInternal ? { 'is:link': true } : {})}
+    {...{ "is:link": true }}
 >
     {text}
 </a>
