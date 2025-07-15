@@ -3,16 +3,15 @@ import GenericContactLink from "./components/GenericContactLink.astro";
 
 const linkedinUrl = "https://www.linkedin.com/in/luigi-abenante/";
 const githubUrl = "https://www.github.com/luigi-abe";
-const resumeUrl = "../../../public/Luigi-Abenante-resume.pdf";
+const resumeUrl = "public/Luigi-Abenante-resume.pdf";
 const youtubeUrl = "https://www.youtube.com/@luigi_abe";
 ---
 
 <section class="mt-5">
     <div class="flex flex-wrap gap-4">
-            <GenericContactLink contactName="linkedin" redirectUrl={linkedinUrl} />
-            <GenericContactLink contactName="github" redirectUrl={githubUrl} />
-            <GenericContactLink contactName="resume" redirectUrl={resumeUrl} />
-            <GenericContactLink contactName="youtube" redirectUrl={youtubeUrl} />
-        </div>
+        <GenericContactLink contactName="linkedin" redirectUrl={linkedinUrl} />
+        <GenericContactLink contactName="github" redirectUrl={githubUrl} />
+        <GenericContactLink contactName="resume" redirectUrl={resumeUrl} />
+        <GenericContactLink contactName="youtube" redirectUrl={youtubeUrl} />
     </div>
 </section>
