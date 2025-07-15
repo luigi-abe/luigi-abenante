@@ -1,9 +1,10 @@
 ---
 import GenericContactLink from "./components/GenericContactLink.astro";
+import { urlBuilder } from "../../utils/utils";
 
 const linkedinUrl = "https://www.linkedin.com/in/luigi-abenante/";
 const githubUrl = "https://www.github.com/luigi-abe";
-const resumeUrl = "public/Luigi-Abenante-resume.pdf";
+const resumeUrl = urlBuilder("/Luigi-Abenante-resume.pdf");
 const youtubeUrl = "https://www.youtube.com/@luigi_abe";
 ---
 
